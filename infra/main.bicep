@@ -10,8 +10,8 @@ param appServicePlanName string = 'myAppServicePlan'
 param webAppName string = 'myWebApp${uniqueString(resourceGroup().id)}'
 @description('SKU for the App Service plan')
 param appServicePlanSku string = 'F1'
-@description('Size of the App Service plan')
-param appServicePlanSize string = 'F1'
+@description('Tier of the App Service plan')
+param appServicePlanTier string = 'Basic'
 @description('Runtime stack for the Web App')
 param webAppRuntimeStack string = 'NODE:20-lts'
 
@@ -29,10 +29,10 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2021-02-01' = {
   location: location
   sku: {
     name: appServicePlanSku
-    tier: appServicePlanSize
+    tier: appServicePlanTier
   }
   properties: {
-    reserved: false
+    reserved: true
   }
 }
 resource webApp 'Microsoft.Web/sites@2021-02-01' = {
