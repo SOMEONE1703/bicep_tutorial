@@ -75,15 +75,15 @@ jobs:
       - uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-      - name: Debug folder
+      - name: Zip backend folder
         run: |
-          pwd
-          ls
-          ls -la ./src/backend
-            
-      - name: Deploy app code
+          cd ./src/backend
+          zip -r ../../backend.zip .
+          
+      - name: Deploy backend
         run: |
-          echo "Deploying app to environment..."
-          # Replace 'my-app' with your actual web app name and ensure the source path is correct.
-          az webapp deploy --resource-group rg-bicep-tutorial --name bicepTut-webapp-001 --src-path ./src/backend
-          # az webapp deploy --resource-group rg-bicep-tutorial --name bicepTut-webapp-001 --src-path ./src/backend
+          az webapp deploy \
+            --resource-group rg-bicep-tutorial \
+            --name bicepTut-webapp-001 \
+            --src-path ./backend.zip \
+            --type zip
