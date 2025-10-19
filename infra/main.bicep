@@ -7,7 +7,7 @@ param storageAccountName string = 'mystorageaccount${uniqueString(resourceGroup(
 @description('Name of the App Service plan')
 param appServicePlanName string = 'myAppServicePlan'
 @description('Name of the Web App')
-param webAppName string = 'myWebApp${uniqueString(resourceGroup().id)}'
+param webAppName string = 'bicepTut-webapp-001'
 @description('SKU for the App Service plan')
 param appServicePlanSku string = 'F1'
 @description('Tier of the App Service plan')

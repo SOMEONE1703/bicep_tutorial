@@ -79,5 +79,5 @@ jobs:
         run: |
           echo "Deploying app to environment..."
           # Replace 'my-app' with your actual web app name and ensure the source path is correct.
-          az webapp deploy --resource-group rg-bicep-tutorial --name <your-app-name> --src-path ./src
-          # az webapp deploy --resource-group rg-bicep-tutorial --name <your-app-name> --src-path ./src
+          az webapp deploy --resource-group rg-bicep-tutorial --name bicepTut-webapp-001 --src-path ./src
+          # az webapp deploy --resource-group rg-bicep-tutorial --name bicepTut-webapp-001 --src-path ./src
