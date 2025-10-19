@@ -13,7 +13,7 @@ param appServicePlanSku string = 'F1'
 @description('Size of the App Service plan')
 param appServicePlanSize string = 'F1'
 @description('Runtime stack for the Web App')
-param webAppRuntimeStack string = 'NODE|14-lts'
+param webAppRuntimeStack string = 'NODE|18-lts'
 
 
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-04-01' = {
