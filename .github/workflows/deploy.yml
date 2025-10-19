@@ -75,6 +75,12 @@ jobs:
       - uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Debug folder
+        run: |
+          pwd
+          ls -la ./src/backend
+          ls -la ./src/backend/
+            
       - name: Deploy app code
         run: |
           echo "Deploying app to environment..."
