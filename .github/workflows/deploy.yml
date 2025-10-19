@@ -5,10 +5,7 @@ on:
     branches:
       - main
       - feat/*
-    paths:
-      - src/**
-      - infra/**
-      - .github/**
+
     paths-ignore:
       - README.md
 
