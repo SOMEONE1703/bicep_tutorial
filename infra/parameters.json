@@ -6,7 +6,7 @@
       "value": "southafricanorth"
     },
     "storageAccountName": {
-      "value": "mystorage12345"
+      "value": "bicep-tutorial-storage"
     }
   }
 }
