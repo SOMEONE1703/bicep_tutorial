@@ -13,7 +13,7 @@ param appServicePlanSku string = 'F1'
 @description('Tier of the App Service plan')
 param appServicePlanTier string = 'Basic'
 @description('Runtime stack for the Web App')
-param webAppRuntimeStack string = 'NODE:20-lts'
+param webAppRuntimeStack string = 'NODE|20-lts'
 
 
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-04-01' = {
