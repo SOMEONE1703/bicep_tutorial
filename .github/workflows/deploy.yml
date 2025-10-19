@@ -6,12 +6,11 @@ on:
       - main
       - feat/*
     paths:
-      include:
-        - src/**
-        - infra/**
-        - .github/**
-      exclude:
-        - README.md
+      - src/**
+      - infra/**
+      - .github/**
+    paths-ignore:
+      - README.md
 
 jobs:
   # 🧩 1️⃣ Install Dependencies
@@ -23,7 +22,7 @@ jobs:
         with:
           node-version: 18
       - run: npm install
-        working-directory: ./src
+        working-directory: ./src/backend
         name: Install dependencies
 
   # ☁️ 2️⃣ Deploy Infrastructure
@@ -82,5 +81,6 @@ jobs:
       - name: Deploy app code
         run: |
           echo "Deploying app to environment..."
-          # Example deployment (replace with your app logic)
-          # az webapp deploy --resource-group rg-bicep-tutorial --name my-app --src-path ./src
+          # Replace 'my-app' with your actual web app name and ensure the source path is correct.
+          az webapp deploy --resource-group rg-bicep-tutorial --name <your-app-name> --src-path ./src
+          # az webapp deploy --resource-group rg-bicep-tutorial --name <your-app-name> --src-path ./src
