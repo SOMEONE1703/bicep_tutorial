@@ -42,10 +42,11 @@ resource webApp 'Microsoft.Web/sites@2021-02-01' = {
     serverFarmId: appServicePlan.id
     siteConfig: {
       linuxFxVersion: webAppRuntimeStack
+      appCommandLine: 'npm start'
       appSettings: [
         {
-          name: 'WEBSITE_RUN_FROM_PACKAGE'
-          value: '1'
+          name: 'WEBSITE_NODE_DEFAULT_VERSION'
+          value: '~20'
         }
       ]
     }
