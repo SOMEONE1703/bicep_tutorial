@@ -78,8 +78,8 @@ jobs:
       - name: Debug folder
         run: |
           pwd
+          ls
           ls -la ./src/backend
-          ls -la ./src/backend/
             
       - name: Deploy app code
         run: |
